@@ -12,7 +12,7 @@ df = conn.query("SELECT * FROM smoothies.public.fruit_options;", ttl="10m")
 @st.cache_data
 def load_table():
     session = conn.session()
-    return session.table("smoothies.public.fruit_options")
+    return session.table("smoothies.public.fruit_options").to_pandas()
 
 df = load_table()
 

@@ -8,6 +8,7 @@ from snowflake.snowpark import Session
 conn = st.connection("snowflake")
 #session = cnx.session()
 import requests
+import pandas as pd
 
 conn = st.connection("snowflake")
 df = conn.query("SELECT * FROM smoothies.public.fruit_options;", ttl="10m")

@@ -7,7 +7,10 @@ from snowflake.snowpark import Session
 #session = get_active_session()
 
 conn = st.connection("snowflake")
-df = conn.query("SELECT * FROM smoothies.public.fruit_options", ttl="10m")
+df = conn.query("SELECT * FROM smoothies.public.fruit_options;", ttl="10m")
+
+
+
 
 #for row in df.itertuples():
     #st.write(f"{row.NAME} has a :{row.PET}:")

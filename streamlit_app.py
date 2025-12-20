@@ -2,7 +2,7 @@
 import os
 import streamlit as st
 from snowflake.snowpark.functions import col
-from snowflake.snowpark.context import get_active_session
+#from snowflake.snowpark.context import get_active_session
 from snowflake.snowpark import Session
 #session = get_active_session()
 conn = st.connection("snowflake")

@@ -3,6 +3,12 @@ import streamlit as st
 from snowflake.snowpark.functions import col
 from snowflake.snowpark.context import get_active_session
 
+conn = st.connection("snowflake")
+df = conn.query("SELECT * FROM mytable;", ttl="10m")
+
+for row in df.itertuples():
+    st.write(f"{row.NAME} has a :{row.PET}:")
+
 # Write directly to the app
 st.title(":cup_with_straw: Customize Your Smoothie! :cup_with_straw:")
 st.write(

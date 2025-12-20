@@ -5,6 +5,7 @@ from snowflake.snowpark.functions import col
 from snowflake.snowpark.context import get_active_session
 from snowflake.snowpark import Session
 #session = get_active_session()
+import requests
 
 conn = st.connection("snowflake")
 df = conn.query("SELECT * FROM smoothies.public.fruit_options;", ttl="10m")
@@ -67,7 +68,6 @@ if ingredients_list:
         
         st.success('Your Smoothie is ordered!',icon="✅")
 
-import requests
 
 
         

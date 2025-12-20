@@ -10,7 +10,7 @@ session = cnx.session()
 #import requests
 
 #conn = st.connection("snowflake")
-df = conn.query("SELECT * FROM smoothies.public.fruit_options;", ttl="10m")
+#df = conn.query("SELECT * FROM smoothies.public.fruit_options;", ttl="10m")
 
 @st.cache_data
 def load_table():

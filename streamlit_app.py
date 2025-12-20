@@ -14,7 +14,7 @@ def load_table():
     session = conn.session()
     return session.table("smoothies.public.fruit_options").to_pandas()
 
-df = load_table()
+#df = load_table()
 
 
 #for row in df.itertuples():
@@ -32,7 +32,7 @@ name_on_order = st.text_input('Name on Smoothie:')
 st.write('The name on your Smoothie will be:', name_on_order)
 
 session = get_active_session()
-#df = load_table()
+df = load_table()
 my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'))
 #st.dataframe(data=my_dataframe, use_container_width=True)
 

@@ -6,7 +6,7 @@ from snowflake.snowpark.context import get_active_session
 from snowflake.snowpark import Session
 #session = get_active_session()
 conn = st.connection("snowflake")
-session = cnx.session()
+#session = cnx.session()
 import requests
 
 conn = st.connection("snowflake")

@@ -4,13 +4,13 @@ import streamlit as st
 from snowflake.snowpark.functions import col
 from snowflake.snowpark.context import get_active_session
 from snowflake.snowpark import Session
-session = get_active_session()
+#session = get_active_session()
 conn = st.connection("snowflake")
 session = cnx.session()
-#import requests
+import requests
 
-#conn = st.connection("snowflake")
-#df = conn.query("SELECT * FROM smoothies.public.fruit_options;", ttl="10m")
+conn = st.connection("snowflake")
+df = conn.query("SELECT * FROM smoothies.public.fruit_options;", ttl="10m")
 
 @st.cache_data
 def load_table():
